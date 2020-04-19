@@ -41,7 +41,7 @@ MECHANISM_GO_MAPPING = {
     "transcriptional activation": "GO:0140110",
     "transcriptional regulation": "GO:0140110",
     "transcriptional repression": "GO:0140110",
-    "translation regulation": "GO:0045182",
+    "translation regulation": "GO:0003730", # same as post transcriptional regulation
     "trimethylation" : "GO:0008276",
     "tyrosination" : "GO:0004835",
     "ubiquitination" : "GO:0061630"
@@ -201,7 +201,6 @@ class PathwayConnectionSet():
                 data = list(csv.DictReader(f, delimiter="\t"))
                 for line in data:
                     linenum += 1
-                    print(line)
 
                     # If up-regulates (including any variants of this), use RO:0002629 if DIRECT, and use RO:0002213 if not DIRECT or UNKNOWN
                     relation = None
